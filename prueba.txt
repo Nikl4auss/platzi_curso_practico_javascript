@@ -1,0 +1,96 @@
+**Variables y Operaciones**
+
+¿Qué es una variable y para qué sirve?
+
+	Una variable es un espacio apartado en memoria donde podemos alojar datos de todo tipo. Pueden ser usadas como parámetros en una función, como "return value" de una función, como valor de una operación, etc...
+
+¿Cuál es la diferencia entre declarar e inicializar una variable?
+
+	Cuando declaramos una variable, tan solo le estamos asignando un nombre y un espeacio en memoria, pero no aloja ningun tipo de valor o dato dentro suyo. Solo cuando la inicializamos usando el simbolo "=" le asignamos un valor.
+
+¿Cuál es la diferencia entre sumar números y concatenar strings?
+	Cuando sumamos numeros estamos creando un nuevo elemento del tipo Number a partir de la suma de dos valores, en cambio al concatenar strings tan solo estamos uniendo dos cadenas de caracteres, es decir unimos los textos dento de cada string ej: Si hacemos la suma:
+
+```
+7 + 7
+```
+Esto nos devuelve: 14.
+En cambio cuando hacemos la operación:
+```
+"7" + "7"
+```
+Obtenemos un string "77"
+
+¿Cuál operador me permite sumar o cocatenar?
+	
+	El operador "+".
+
+Determina el nombre y tipo de dato para almacenar en variables la siguiente información:
+
+```
+// Nombre
+var first_name = "Nicolas" // string
+// Apellido
+var last_name = "Marinelli" // string
+// Nombre de usuario en Platzi
+var platzi_username = "nikl4auss" // string
+// Edad
+var age = 23 // number
+// Correo electrónico
+var user_mail = ""***@***.com" // string
+// Mayor de edad
+var is_adult = true // boolean
+// Dinero ahorrado
+var saved_money = 10000 // number
+// Deudas
+var debt = 3000 // number
+
+// Nombre Completo
+console.log(first_name, last_name)
+
+//Dinero real
+var actual_money = saved_money - debt
+
+console.log(actual_money)
+```
+**Funciones**
+
+¿Qué es una funcion?
+	
+	Una función es un bloque de codigo reutilizable que puede aceptar argumentos (o no) para hacer con ellos algo en concreto y devolver un valor.
+
+¿Cuándo me sirve usar una función en mi código?
+
+	Cuando tenemos un código que debe ser reutilizado múltiples veces con diferentes valores.
+
+¿Cuál es la diferencia entre parámetros y argumentos de una función?
+
+	Los parámetros son las variables que designamos que deben ser pasadas a la función para ser utilizadas, mientras que los argumentos son los valores reales que le pasamos a la función para que utilice.
+
+Convierte el siguiente código en una función, pero, cambiando cuando sea necesario las variables constantes por parámetros y argumentos en una función:
+
+
+
+```
+// Codigo dado
+const name = "Juan David";
+const lastname = "Castro Gallego";
+const completeName = name + lastname;
+const nickname = "juandc";
+
+console.log("Mi nombre es " + completeName + ", pero prefiero que me digas " + nickname + ".");
+
+// Mi codigo
+
+function nombre_completo(nombre, apellido, nickname) {
+	console.log("Hola mi nombre es", nombre, apellido, "pero prefiero que me digas:", nickname)
+}
+```
+**Condicionales**
+¿Qué es un condicional? 
+	
+	Es un tipo de operador que devuelve un valor booleano dependiendo de si las condiciones dadas son cumplidas
+
+¿Qué tipos de condicionales existen en JavaScript y cuáles son sus diferencias?
+
+	
