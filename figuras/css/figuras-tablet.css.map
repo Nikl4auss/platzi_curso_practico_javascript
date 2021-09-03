@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,SAAS,EAAE,QAAQ;EACnB,eAAe,EAAE,MAAM;EACvB,SAAS,EAAE,KAAK;CACjB",
+    "sources": [
+        "figuras-tablet.scss"
+    ],
+    "names": [],
+    "file": "figuras-tablet.css"
+}

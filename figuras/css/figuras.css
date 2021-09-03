@@ -57,6 +57,7 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 auto;
+  margin-top: 20px;
   width: 100%;
   min-width: 320px;
   max-width: 900px;
@@ -83,8 +84,12 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   margin-top: 30px;
+  -webkit-transition: flex-flow 0.4s ease-in-out, -webkit- 2009flex-flow 0.4s ease-in-out;
+  transition: flex-flow 0.4s ease-in-out, -webkit- 2009flex-flow 0.4s ease-in-out;
+  transition: flex-flow 0.4s ease-in-out;
+  transition: flex-flow 0.4s ease-in-out, -webkit- 2009flex-flow 0.4s ease-in-out, -ms-flex-flow 0.4s ease-in-out;
 }
 
 .geometry-shape {
@@ -101,9 +106,10 @@ html {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   gap: 10px;
-  width: 280px;
-  max-width: 600px;
-  height: 250px;
+  min-width: 280px;
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
   padding: 5px 10px;
   background-color: #eeeeee94;
   border: 1px solid #a5a4a4;
@@ -113,5 +119,92 @@ html {
 .geometry-shape__title {
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+.geometry-shape__shape--square, .geometry-shape__shape--triangle, .geometry-shape__shape--circle {
+  height: 30px;
+  width: 30px;
+}
+
+.geometry-shape__shape--square {
+  content: url("../assets/square-svgrepo-com.svg");
+}
+
+.geometry-shape__shape--triangle {
+  content: url("../assets/plain-triangle-svgrepo-com.svg");
+}
+
+.geometry-shape__shape--circle {
+  content: url("../assets/circle-svgrepo-com.svg");
+}
+
+.geometry-shape__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 10px;
+}
+
+.geometry-shape__label {
+  display: block;
+  width: 100%;
+}
+
+.geometry-shape__input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 2px 10px;
+  border: 1px solid #5f5f5f94;
+  border-radius: 10px;
+  background-color: #fff;
+  -webkit-transition: border-color 0.4s ease-in-out;
+  transition: border-color 0.4s ease-in-out;
+}
+
+.geometry-shape__input:hover {
+  cursor: pointer;
+  border-color: #3a3a3a;
+}
+
+.geometry-shape__input:focus-visible {
+  outline: none;
+}
+
+.geometry-shape__button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px 10px;
+  border: 1px solid #272727;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #a5a4a4;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.geometry-shape__button:hover {
+  cursor: pointer;
+  border-color: #575757;
+  background-color: #b1b1b1;
+}
+
+.geometry-shape__info {
+  color: #3f3e3e;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=figuras.css.map */

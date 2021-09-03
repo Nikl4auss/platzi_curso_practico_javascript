@@ -203,13 +203,19 @@ class Circulo {
 
 const inputLadoCuadrado = document.querySelector("#ladoCuadrado");
 
+const infoCuadrado = document.querySelector("#square-info");
+
 const inputLadoTriangulo1 = document.querySelector("#ladoTriangulo1");
 
 const inputLadoTriangulo2 = document.querySelector("#ladoTriangulo2");
 
 const inputBaseTriangulo = document.querySelector("#baseTriangulo");
 
+const infoTriangulo = document.querySelector("#triangle-info");
+
 const inputRadioCirculo = document.querySelector("#radioCirculo");
+
+const infoCirculo = document.querySelector("#circle-info");
 
 let crearCuadrado = () => {
   let lado = Number(inputLadoCuadrado.value);
@@ -235,13 +241,13 @@ let crearCirculo = () => {
 let calcularPerimetroCuadrado = () => {
   const cuadrado = crearCuadrado();
 
-  alert(cuadrado.printPerimetro());
+  infoCuadrado.innerText = cuadrado.printPerimetro();
 };
 
 let calcularAreaCuadrado = () => {
   const cuadrado = crearCuadrado();
 
-  alert(cuadrado.printArea());
+  infoCuadrado.innerText = cuadrado.printArea();
 };
 
 let calcularPerimetroTriangulo = () => {
@@ -249,23 +255,23 @@ let calcularPerimetroTriangulo = () => {
 
   console.log(triangulo.getType);
 
-  alert(triangulo.printPerimetro());
+  infoTriangulo.innerText = triangulo.printPerimetro();
 };
 
 let calcularAreaTriangulo = () => {
   const triangulo = crearTriangulo();
 
-  alert(triangulo.printArea());
+  infoTriangulo.innerText = triangulo.printArea();
 };
 
 let calcularCircunferencia = () => {
   const circulo = crearCirculo();
 
-  alert(circulo.printCircunferencia());
+  infoCirculo.innerText = circulo.printCircunferencia();
 };
 
 let calcularAreaCirculo = () => {
   const circulo = crearCirculo();
 
-  alert(circulo.printArea());
+  infoCirculo.innerText = circulo.printArea();
 };
