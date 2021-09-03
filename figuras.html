@@ -5,9 +5,129 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Figuras Geométricas | Curso Practico JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/figuras.css" />
   </head>
   <body>
-    <h1>Figuras Geométricas</h1>
+    <header class="header">
+      <h1 class="header__title">Geometry Calc</h1>
+      <p class="header__description">Tu herramienta de geométria diaria</p>
+    </header>
+    <main class="main-content">
+      <h1 class="main-content__title">
+        Calcula area y perimetro de distintas formas geométricas con gran
+        facilidad
+      </h1>
+      <section class="geometry-container">
+        <section class="geometry-shape">
+          <h1 class="geometry-shape__title">Cuadrado</h1>
+          <form action="" class="geometry-shape__form">
+            <label for="ladoCuadrado" class="gemetry-shape__label">
+              Escribe cuanto mide cada lado de tu Cuadrado:
+              <input
+                type="number"
+                name="ladoCuadrado"
+                id="ladoCuadrado"
+                class="geometry-shape__input"
+              />
+            </label>
+            <button
+              type="button"
+              class="geometry-shape__button"
+              onclick="calcularPerimetroCuadrado()"
+            >
+              Calcular Perimetro
+            </button>
+            <button
+              type="button"
+              class="geometry-shape__button"
+              onclick="calcularAreaCuadrado()"
+            >
+              Calcular Área
+            </button>
+          </form>
+        </section>
+        <section class="geometry-shape">
+          <h1 class="geometry-shape__title">Triangulo</h1>
+          <form action="" class="geometry-shape__form">
+            <label for="ladoTriangulo1" class="gemetry-shape__label">
+              Escribe cuanto mide el lado 1 de tu Triangulo:
+              <input
+                type="number"
+                name="ladoTriangulo1"
+                id="ladoTriangulo1"
+                class="geometry-shape__input"
+              />
+            </label>
+            <label for="ladoTriangulo2" class="gemetry-shape__label">
+              Escribe cuanto mide el lado 2 de tu Triangulo:
+              <input
+                type="number"
+                name="ladoTriangulo2"
+                id="ladoTriangulo2"
+                class="geometry-shape__input"
+              />
+            </label>
+            <label for="baseTriangulo" class="gemetry-shape__label">
+              Escribe cuanto mide la base de tu Triangulo:
+              <input
+                type="number"
+                name="baseTriangulo"
+                id="baseTriangulo"
+                class="geometry-shape__input"
+              />
+            </label>
+            <button
+              type="button"
+              class="geometry-shape__button"
+              onclick="calcularPerimetroTriangulo()"
+            >
+              Calcular Perimetro
+            </button>
+            <button
+              type="button"
+              class="geometry-shape__button"
+              onclick="calcularAreaTriangulo()"
+            >
+              Calcular Área
+            </button>
+          </form>
+        </section>
+        <section class="geometry-shape">
+          <h1 class="geometry-shape__title">Circulo</h1>
+          <form action="" class="geometry-shape__form">
+            <label for="radioCirculo" class="gemetry-shape__label">
+              Escribe cuanto mide el radio de tu Circulo:
+              <input
+                type="number"
+                name="radioCirculo"
+                id="radioCirculo"
+                class="geometry-shape__input"
+              />
+            </label>
+            <button
+              type="button"
+              class="geometry-shape__button"
+              onclick="calcularCircunferencia()"
+            >
+              Calcular Circunferencia
+            </button>
+            <button
+              type="button"
+              class="geometry-shape__button"
+              onclick="calcularAreaCirculo()"
+            >
+              Calcular Área
+            </button>
+          </form>
+        </section>
+      </section>
+    </main>
     <script src="./figuras.js"></script>
   </body>
 </html>

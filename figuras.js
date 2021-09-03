@@ -1,83 +1,271 @@
 //Codigo del cuadrado
+class Cuadrado {
+  constructor(lado) {
+    this.lado = lado;
+  }
 
-console.group("Cuadrado");
+  get getLado() {
+    return this.lado;
+  }
 
-const ladoCuadrado = 4;
+  set setLado(lado) {
+    this.lado = lado;
+  }
 
-console.log("Los lados del cuadrado miden:", ladoCuadrado, "cm");
+  get perimetro() {
+    return this.calcPerimetro();
+  }
 
-const perimetroCuadrado = ladoCuadrado * 4;
+  get area() {
+    return this.calcArea();
+  }
 
-console.log("El perimetro del cuadrado es:", perimetroCuadrado, "cm");
+  printLado() {
+    return `Los lados miden: ${this.getLado} cm`;
+  }
 
-const areaCuadrado = ladoCuadrado * ladoCuadrado;
+  calcPerimetro() {
+    return this.lado * 4;
+  }
 
-console.log("El area del cuadrado es:", areaCuadrado, "cm^2");
+  perimetroString() {
+    return `${this.calcPerimetro()} cm`;
+  }
 
-console.groupEnd();
+  printPerimetro() {
+    return `El perimetro es: ${this.perimetroString()}`;
+  }
 
-console.group("Triangulo");
+  calcArea() {
+    return this.lado ** 2;
+  }
+
+  areaString() {
+    return `${this.calcArea()} cm^2`;
+  }
+
+  printArea() {
+    return `El area es: ${this.areaString()}`;
+  }
+
+  printInfo() {
+    console.group("Cuadrado");
+    console.log(this.printLado());
+    console.log(this.printPerimetro());
+    console.log(this.printArea());
+    console.groupEnd();
+  }
+}
+
 //Codigo del trinagulo
 
-const ladoTriangulo1 = 6;
+class Triangulo {
+  constructor(lado1, lado2, base) {
+    this.lado1 = lado1;
+    this.lado2 = lado2;
+    this.base = base;
+    this.semiPerimetro = this.calcPerimetro() / 2;
+    this.type =
+      this.lado1 === this.lado2 && this.lado1 !== this.base
+        ? "Isoceles"
+        : this.lado1 === this.lado2 && this.lado1 === this.base
+        ? "Equilatero"
+        : "Escaleno";
+    this.altura = this.setAltura();
+  }
+  get getLado1() {
+    return this.lado1;
+  }
 
-const ladoTriangulo2 = 6;
+  get getLado2() {
+    return this.lado2;
+  }
 
-const baseTriangulo = 4;
+  get getBase() {
+    return this.base;
+  }
 
-const alturaTriangulo = Math.sqrt(
-  ladoTriangulo1 ** 2 - (baseTriangulo / 2) ** 2
-).toFixed(2);
+  get getAltura() {
+    return this.altura;
+  }
 
-console.log(
-  "Los lados del triangulo miden:",
-  ladoTriangulo1,
-  "cm,",
-  ladoTriangulo2
-);
+  get getType() {
+    return this.type;
+  }
 
-console.log(
-  "La base del triangulo es:",
-  baseTriangulo,
-  "cm, y su altura es:",
-  alturaTriangulo,
-  "cm"
-);
+  setAltura() {
+    return this.type === "Isoceles"
+      ? Math.sqrt(this.lado1 ** 2 - (this.base / 2) ** 2)
+      : this.type === "Equilatero"
+      ? Math.sqrt(3 ** this.lado1) / 2
+      : (2 / this.base) *
+        Math.sqrt(
+          this.semiPerimetro *
+            (this.semiPerimetro - this.lado1) *
+            (this.semiPerimetro - this.lado2) *
+            (this.semiPerimetro - this.base)
+        );
+  }
 
-const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + baseTriangulo;
+  printLados() {
+    return `Los lados miden: ${this.getLado1} cm y ${this.getLado2} cm`;
+  }
 
-console.log("El perimetro del triangulo es:", perimetroTriangulo, "cm");
+  printBaseAltura() {
+    return `La base mide: ${this.getBase} cm, y la altura: ${this.getAltura} cm`;
+  }
 
-const areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+  calcPerimetro() {
+    return this.lado1 + this.lado2 + this.base;
+  }
 
-console.log("El area del triangulo es:", areaTriangulo, "cm^2");
+  perimetroString() {
+    return `${this.calcPerimetro()} cm`;
+  }
 
-console.groupEnd();
+  printPerimetro() {
+    return `El perimetro es: ${this.perimetroString()}`;
+  }
+
+  calcArea() {
+    return (this.altura * this.base) / 2;
+  }
+
+  areaString() {
+    return `${this.calcArea()} cm^²`;
+  }
+
+  printArea() {
+    return `El area es: ${this.areaString()}`;
+  }
+
+  printInfo() {
+    console.group("Triangulo");
+    console.log(this.printLados());
+    console.log(this.printBaseAltura());
+    console.log(this.printPerimetro());
+    console.log(this.printArea());
+    console.groupEnd();
+  }
+}
 
 //Codigo del Circulo
+class Circulo {
+  constructor(radio) {
+    this.radio = radio;
+    this.diametro = radio * 2;
+  }
 
-console.group("Circulo");
+  get getRadio() {
+    return this.radio;
+  }
 
-const radioCirculo = 4;
+  get getDiametro() {
+    return this.diametro;
+  }
 
-const diametroCirculo = radioCirculo * 2;
+  printRadioDiametro() {
+    return `Èl radio mide: ${this.getRadio} cm y el diametro: ${this.getDiametro} cm`;
+  }
 
-console.log(
-  "El radio del circulo es:",
-  radioCirculo,
-  "cm, y su diametro es:",
-  diametroCirculo,
-  "cm"
-);
+  calcCircunferencia() {
+    return this.diametro * Math.PI;
+  }
 
-const PI = Math.PI;
+  circunferenciaString() {
+    return `${this.calcCircunferencia().toFixed(2)} cm`;
+  }
 
-const circunferenciaCirculo = diametroCirculo * PI;
+  printCircunferencia() {
+    return `La circunferencia mide: ${this.circunferenciaString()}`;
+  }
 
-console.log("La cicunferencia del circulo es:", circunferenciaCirculo, "cm");
+  calcArea() {
+    return this.radio ** 2 * Math.PI;
+  }
 
-const areaCirculo = radioCirculo ** 2 * PI;
+  areaString() {
+    return `${this.calcArea().toFixed(2)} cm^2`;
+  }
 
-console.log("El area del circulo es:", areaCirculo, "cm^2");
+  printArea() {
+    return `El area mide: ${this.areaString()}`;
+  }
 
-console.groupEnd;
+  printInfo() {
+    console.group("Circulo");
+    console.log(this.printRadioDiametro());
+    console.log(this.printCircunferencia());
+    console.log(this.printArea());
+    console.groupEnd();
+  }
+}
+
+const inputLadoCuadrado = document.querySelector("#ladoCuadrado");
+
+const inputLadoTriangulo1 = document.querySelector("#ladoTriangulo1");
+
+const inputLadoTriangulo2 = document.querySelector("#ladoTriangulo2");
+
+const inputBaseTriangulo = document.querySelector("#baseTriangulo");
+
+const inputRadioCirculo = document.querySelector("#radioCirculo");
+
+let crearCuadrado = () => {
+  let lado = Number(inputLadoCuadrado.value);
+  return new Cuadrado(lado);
+};
+
+let crearTriangulo = () => {
+  let lado1 = Number(inputLadoTriangulo1.value);
+
+  let lado2 = Number(inputLadoTriangulo2.value);
+
+  let base = Number(inputBaseTriangulo.value);
+
+  return new Triangulo(lado1, lado2, base);
+};
+
+let crearCirculo = () => {
+  let radio = Number(inputRadioCirculo.value);
+
+  return new Circulo(radio);
+};
+
+let calcularPerimetroCuadrado = () => {
+  const cuadrado = crearCuadrado();
+
+  alert(cuadrado.printPerimetro());
+};
+
+let calcularAreaCuadrado = () => {
+  const cuadrado = crearCuadrado();
+
+  alert(cuadrado.printArea());
+};
+
+let calcularPerimetroTriangulo = () => {
+  const triangulo = crearTriangulo();
+
+  console.log(triangulo.getType);
+
+  alert(triangulo.printPerimetro());
+};
+
+let calcularAreaTriangulo = () => {
+  const triangulo = crearTriangulo();
+
+  alert(triangulo.printArea());
+};
+
+let calcularCircunferencia = () => {
+  const circulo = crearCirculo();
+
+  alert(circulo.printCircunferencia());
+};
+
+let calcularAreaCirculo = () => {
+  const circulo = crearCirculo();
+
+  alert(circulo.printArea());
+};
